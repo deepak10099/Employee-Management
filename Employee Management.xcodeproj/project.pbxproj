@@ -14,6 +14,8 @@
 		004CE4FF1E43308E00D503D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */; };
 		004CE50A1E43308E00D503D7 /* Employee_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE5091E43308E00D503D7 /* Employee_ManagementTests.swift */; };
 		004CE5151E43308E00D503D7 /* Employee_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */; };
+		005589561E43B7A900CE829E /* dropDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 005589551E43B7A900CE829E /* dropDown.png */; };
+		005589581E43C53200CE829E /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005589571E43C53200CE829E /* EmployeeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		004CE5101E43308E00D503D7 /* Employee ManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Employee ManagementUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_ManagementUITests.swift; sourceTree = "<group>"; };
 		004CE5161E43308E00D503D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		005589551E43B7A900CE829E /* dropDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropDown.png; sourceTree = "<group>"; };
+		005589571E43C53200CE829E /* EmployeeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +106,9 @@
 				004CE4F81E43308E00D503D7 /* Main.storyboard */,
 				004CE4FB1E43308E00D503D7 /* Assets.xcassets */,
 				004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */,
+				005589551E43B7A900CE829E /* dropDown.png */,
 				004CE5001E43308E00D503D7 /* Info.plist */,
+				005589571E43C53200CE829E /* EmployeeManager.swift */,
 			);
 			path = "Employee Management";
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005589561E43B7A900CE829E /* dropDown.png in Resources */,
 				004CE4FF1E43308E00D503D7 /* LaunchScreen.storyboard in Resources */,
 				004CE4FC1E43308E00D503D7 /* Assets.xcassets in Resources */,
 				004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */,
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005589581E43C53200CE829E /* EmployeeManager.swift in Sources */,
 				004CE4F71E43308E00D503D7 /* ViewController.swift in Sources */,
 				004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */,
 			);
@@ -505,6 +513,7 @@
 				004CE51B1E43308E00D503D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		004CE51C1E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee ManagementTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +522,7 @@
 				004CE51E1E43308E00D503D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		004CE51F1E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee ManagementUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +531,7 @@
 				004CE5211E43308E00D503D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
