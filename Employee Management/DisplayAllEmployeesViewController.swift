@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DisplayAllEmployeesViewController.swift
 //  Employee Management
 //
 //  Created by Deepak on 02/02/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DisplayAllEmployeesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

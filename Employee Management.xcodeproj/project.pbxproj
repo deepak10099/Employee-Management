@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F41E43308E00D503D7 /* AppDelegate.swift */; };
-		004CE4F71E43308E00D503D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F61E43308E00D503D7 /* ViewController.swift */; };
+		004CE4F71E43308E00D503D7 /* DisplayAllEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */; };
 		004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4F81E43308E00D503D7 /* Main.storyboard */; };
 		004CE4FC1E43308E00D503D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4FB1E43308E00D503D7 /* Assets.xcassets */; };
 		004CE4FF1E43308E00D503D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */; };
@@ -16,6 +16,10 @@
 		004CE5151E43308E00D503D7 /* Employee_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */; };
 		005589561E43B7A900CE829E /* dropDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 005589551E43B7A900CE829E /* dropDown.png */; };
 		005589581E43C53200CE829E /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005589571E43C53200CE829E /* EmployeeManager.swift */; };
+		0055895E1E43CDB600CE829E /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0055895D1E43CDB600CE829E /* leftArrow.png */; };
+		005589601E43CE7700CE829E /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0055895F1E43CE7700CE829E /* rightArrow.png */; };
+		005589621E43D0CC00CE829E /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005589611E43D0CC00CE829E /* AddEmployeeViewController.swift */; };
+		005589641E43DB2300CE829E /* profileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 005589631E43DB2300CE829E /* profileImage.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 /* Begin PBXFileReference section */
 		004CE4F11E43308E00D503D7 /* Employee Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004CE4F41E43308E00D503D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		004CE4F61E43308E00D503D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAllEmployeesViewController.swift; sourceTree = "<group>"; };
 		004CE4F91E43308E00D503D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		004CE4FB1E43308E00D503D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004CE4FE1E43308E00D503D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		004CE5161E43308E00D503D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005589551E43B7A900CE829E /* dropDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropDown.png; sourceTree = "<group>"; };
 		005589571E43C53200CE829E /* EmployeeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
+		0055895D1E43CDB600CE829E /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		0055895F1E43CE7700CE829E /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		005589611E43D0CC00CE829E /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		005589631E43DB2300CE829E /* profileImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profileImage.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +110,15 @@
 			isa = PBXGroup;
 			children = (
 				004CE4F41E43308E00D503D7 /* AppDelegate.swift */,
-				004CE4F61E43308E00D503D7 /* ViewController.swift */,
+				005589611E43D0CC00CE829E /* AddEmployeeViewController.swift */,
+				004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */,
 				004CE4F81E43308E00D503D7 /* Main.storyboard */,
 				004CE4FB1E43308E00D503D7 /* Assets.xcassets */,
 				004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */,
 				005589551E43B7A900CE829E /* dropDown.png */,
+				0055895F1E43CE7700CE829E /* rightArrow.png */,
+				0055895D1E43CDB600CE829E /* leftArrow.png */,
+				005589631E43DB2300CE829E /* profileImage.jpg */,
 				004CE5001E43308E00D503D7 /* Info.plist */,
 				005589571E43C53200CE829E /* EmployeeManager.swift */,
 			);
@@ -240,7 +252,10 @@
 			files = (
 				005589561E43B7A900CE829E /* dropDown.png in Resources */,
 				004CE4FF1E43308E00D503D7 /* LaunchScreen.storyboard in Resources */,
+				005589641E43DB2300CE829E /* profileImage.jpg in Resources */,
+				0055895E1E43CDB600CE829E /* leftArrow.png in Resources */,
 				004CE4FC1E43308E00D503D7 /* Assets.xcassets in Resources */,
+				005589601E43CE7700CE829E /* rightArrow.png in Resources */,
 				004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				005589581E43C53200CE829E /* EmployeeManager.swift in Sources */,
-				004CE4F71E43308E00D503D7 /* ViewController.swift in Sources */,
+				004CE4F71E43308E00D503D7 /* DisplayAllEmployeesViewController.swift in Sources */,
+				005589621E43D0CC00CE829E /* AddEmployeeViewController.swift in Sources */,
 				004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
