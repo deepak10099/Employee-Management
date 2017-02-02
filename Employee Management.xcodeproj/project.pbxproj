@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F41E43308E00D503D7 /* AppDelegate.swift */; };
+		004CE4F71E43308E00D503D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F61E43308E00D503D7 /* ViewController.swift */; };
+		004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4F81E43308E00D503D7 /* Main.storyboard */; };
+		004CE4FC1E43308E00D503D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4FB1E43308E00D503D7 /* Assets.xcassets */; };
+		004CE4FF1E43308E00D503D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */; };
+		004CE50A1E43308E00D503D7 /* Employee_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE5091E43308E00D503D7 /* Employee_ManagementTests.swift */; };
+		004CE5151E43308E00D503D7 /* Employee_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		004CE5061E43308E00D503D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 004CE4E91E43308E00D503D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 004CE4F01E43308E00D503D7;
+			remoteInfo = "Employee Management";
+		};
+		004CE5111E43308E00D503D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 004CE4E91E43308E00D503D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 004CE4F01E43308E00D503D7;
+			remoteInfo = "Employee Management";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		004CE4F11E43308E00D503D7 /* Employee Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		004CE4F41E43308E00D503D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		004CE4F61E43308E00D503D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		004CE4F91E43308E00D503D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		004CE4FB1E43308E00D503D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		004CE4FE1E43308E00D503D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		004CE5001E43308E00D503D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		004CE5051E43308E00D503D7 /* Employee ManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Employee ManagementTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		004CE5091E43308E00D503D7 /* Employee_ManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_ManagementTests.swift; sourceTree = "<group>"; };
+		004CE50B1E43308E00D503D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		004CE5101E43308E00D503D7 /* Employee ManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Employee ManagementUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_ManagementUITests.swift; sourceTree = "<group>"; };
+		004CE5161E43308E00D503D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		004CE4EE1E43308E00D503D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004CE5021E43308E00D503D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004CE50D1E43308E00D503D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		004CE4E81E43308E00D503D7 = {
+			isa = PBXGroup;
+			children = (
+				004CE4F31E43308E00D503D7 /* Employee Management */,
+				004CE5081E43308E00D503D7 /* Employee ManagementTests */,
+				004CE5131E43308E00D503D7 /* Employee ManagementUITests */,
+				004CE4F21E43308E00D503D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		004CE4F21E43308E00D503D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				004CE4F11E43308E00D503D7 /* Employee Management.app */,
+				004CE5051E43308E00D503D7 /* Employee ManagementTests.xctest */,
+				004CE5101E43308E00D503D7 /* Employee ManagementUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		004CE4F31E43308E00D503D7 /* Employee Management */ = {
+			isa = PBXGroup;
+			children = (
+				004CE4F41E43308E00D503D7 /* AppDelegate.swift */,
+				004CE4F61E43308E00D503D7 /* ViewController.swift */,
+				004CE4F81E43308E00D503D7 /* Main.storyboard */,
+				004CE4FB1E43308E00D503D7 /* Assets.xcassets */,
+				004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */,
+				004CE5001E43308E00D503D7 /* Info.plist */,
+			);
+			path = "Employee Management";
+			sourceTree = "<group>";
+		};
+		004CE5081E43308E00D503D7 /* Employee ManagementTests */ = {
+			isa = PBXGroup;
+			children = (
+				004CE5091E43308E00D503D7 /* Employee_ManagementTests.swift */,
+				004CE50B1E43308E00D503D7 /* Info.plist */,
+			);
+			path = "Employee ManagementTests";
+			sourceTree = "<group>";
+		};
+		004CE5131E43308E00D503D7 /* Employee ManagementUITests */ = {
+			isa = PBXGroup;
+			children = (
+				004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */,
+				004CE5161E43308E00D503D7 /* Info.plist */,
+			);
+			path = "Employee ManagementUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		004CE4F01E43308E00D503D7 /* Employee Management */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 004CE5191E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee Management" */;
+			buildPhases = (
+				004CE4ED1E43308E00D503D7 /* Sources */,
+				004CE4EE1E43308E00D503D7 /* Frameworks */,
+				004CE4EF1E43308E00D503D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Employee Management";
+			productName = "Employee Management";
+			productReference = 004CE4F11E43308E00D503D7 /* Employee Management.app */;
+			productType = "com.apple.product-type.application";
+		};
+		004CE5041E43308E00D503D7 /* Employee ManagementTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 004CE51C1E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee ManagementTests" */;
+			buildPhases = (
+				004CE5011E43308E00D503D7 /* Sources */,
+				004CE5021E43308E00D503D7 /* Frameworks */,
+				004CE5031E43308E00D503D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				004CE5071E43308E00D503D7 /* PBXTargetDependency */,
+			);
+			name = "Employee ManagementTests";
+			productName = "Employee ManagementTests";
+			productReference = 004CE5051E43308E00D503D7 /* Employee ManagementTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		004CE50F1E43308E00D503D7 /* Employee ManagementUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 004CE51F1E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee ManagementUITests" */;
+			buildPhases = (
+				004CE50C1E43308E00D503D7 /* Sources */,
+				004CE50D1E43308E00D503D7 /* Frameworks */,
+				004CE50E1E43308E00D503D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				004CE5121E43308E00D503D7 /* PBXTargetDependency */,
+			);
+			name = "Employee ManagementUITests";
+			productName = "Employee ManagementUITests";
+			productReference = 004CE5101E43308E00D503D7 /* Employee ManagementUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		004CE4E91E43308E00D503D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Deepak;
+				TargetAttributes = {
+					004CE4F01E43308E00D503D7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					004CE5041E43308E00D503D7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 004CE4F01E43308E00D503D7;
+					};
+					004CE50F1E43308E00D503D7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 004CE4F01E43308E00D503D7;
+					};
+				};
+			};
+			buildConfigurationList = 004CE4EC1E43308E00D503D7 /* Build configuration list for PBXProject "Employee Management" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 004CE4E81E43308E00D503D7;
+			productRefGroup = 004CE4F21E43308E00D503D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				004CE4F01E43308E00D503D7 /* Employee Management */,
+				004CE5041E43308E00D503D7 /* Employee ManagementTests */,
+				004CE50F1E43308E00D503D7 /* Employee ManagementUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		004CE4EF1E43308E00D503D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004CE4FF1E43308E00D503D7 /* LaunchScreen.storyboard in Resources */,
+				004CE4FC1E43308E00D503D7 /* Assets.xcassets in Resources */,
+				004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004CE5031E43308E00D503D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004CE50E1E43308E00D503D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		004CE4ED1E43308E00D503D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004CE4F71E43308E00D503D7 /* ViewController.swift in Sources */,
+				004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004CE5011E43308E00D503D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004CE50A1E43308E00D503D7 /* Employee_ManagementTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004CE50C1E43308E00D503D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004CE5151E43308E00D503D7 /* Employee_ManagementUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		004CE5071E43308E00D503D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 004CE4F01E43308E00D503D7 /* Employee Management */;
+			targetProxy = 004CE5061E43308E00D503D7 /* PBXContainerItemProxy */;
+		};
+		004CE5121E43308E00D503D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 004CE4F01E43308E00D503D7 /* Employee Management */;
+			targetProxy = 004CE5111E43308E00D503D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		004CE4F81E43308E00D503D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				004CE4F91E43308E00D503D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				004CE4FE1E43308E00D503D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		004CE5171E43308E00D503D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		004CE5181E43308E00D503D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		004CE51A1E43308E00D503D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Employee Management/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deepak.Employee-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		004CE51B1E43308E00D503D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Employee Management/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deepak.Employee-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		004CE51D1E43308E00D503D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Employee ManagementTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deepak.Employee-ManagementTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Employee Management.app/Employee Management";
+			};
+			name = Debug;
+		};
+		004CE51E1E43308E00D503D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Employee ManagementTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deepak.Employee-ManagementTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Employee Management.app/Employee Management";
+			};
+			name = Release;
+		};
+		004CE5201E43308E00D503D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Employee ManagementUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deepak.Employee-ManagementUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Employee Management";
+			};
+			name = Debug;
+		};
+		004CE5211E43308E00D503D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Employee ManagementUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deepak.Employee-ManagementUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Employee Management";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		004CE4EC1E43308E00D503D7 /* Build configuration list for PBXProject "Employee Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				004CE5171E43308E00D503D7 /* Debug */,
+				004CE5181E43308E00D503D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		004CE5191E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				004CE51A1E43308E00D503D7 /* Debug */,
+				004CE51B1E43308E00D503D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		004CE51C1E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee ManagementTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				004CE51D1E43308E00D503D7 /* Debug */,
+				004CE51E1E43308E00D503D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		004CE51F1E43308E00D503D7 /* Build configuration list for PBXNativeTarget "Employee ManagementUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				004CE5201E43308E00D503D7 /* Debug */,
+				004CE5211E43308E00D503D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 004CE4E91E43308E00D503D7 /* Project object */;
+}
