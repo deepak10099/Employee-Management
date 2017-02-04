@@ -44,6 +44,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="LUd-1K-q6M"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -8,8 +8,15 @@
 
 import UIKit
 
+public
 class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource {
 
+    var selectedHobbies:String = ""{
+        didSet{
+            let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 5, section: 0)) as! AddEmployeeCell
+            cell.detailsTextView.text = selectedHobbies
+        }
+    }
     var genderTextView:UITextView!
     var pickerView:UIPickerView!
     var pickerViewData:Array<String>!
@@ -19,7 +26,7 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     var detailsLabel = ["Designation","DOB","Address","Gender","Hobbies"]
     @IBOutlet weak var addEmployeeTableView: UITableView!
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         addEmployeeTableView.delegate = self
         addEmployeeTableView.dataSource = self
         pickerView = UIPickerView()
@@ -32,24 +39,24 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         datePickerView.addTarget(self, action: #selector(AddEmployeeViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
 
     }
 
     //MARK: UITableViewControllerDataSource Methods
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (detailsLabel.count + 1)
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:AddEmployeeCell!
         if  indexPath.row == 0{
             cell = addEmployeeTableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! AddEmployeeCell
@@ -73,14 +80,14 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     }
 
     //MARK: UITableViewControllerDelegate Methods
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: indexPath) as! AddEmployeeCell
 
         if  indexPath.row == 4{
 
         }
         if indexPath.row == 5{
-            var multipleSelectionViewController:UIViewController = MultipleSelectionViewController(nibName: "MultipleSelectionViewController", bundle: nil)
+            var multipleSelectionViewController:UIViewController = MultipleSelectionViewController(nibName: "MultipleSelectionViewController", bundle: nil, delegate: self)
             navigationController?.pushViewController(multipleSelectionViewController, animated: true)
 //            self.present(multipleSelectionViewController, animated: true, completion: nil)
         }
@@ -89,21 +96,21 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     }
 
     //MARK: UIPickerViewDataSource Methods
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
 
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerViewData.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerViewData[row]
     }
 
     //MARK: UIPickerViewDelegate Methods
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        var cell:AddEmployeeCell = (addEmployeeTableView.cellForRow(at: IndexPath(row: 4, section: 0)) as! AddEmployeeCell)
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let cell:AddEmployeeCell = (addEmployeeTableView.cellForRow(at: IndexPath(row: 4, section: 0)) as! AddEmployeeCell)
         cell.detailsTextView.text = pickerViewData[row]
         view.endEditing(true)
     }
@@ -113,12 +120,12 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
 
-        var cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! AddEmployeeCell
+        let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! AddEmployeeCell
         cell.detailsTextView.text = dateFormatter.string(from: sender.date)
     }
 
     @IBAction func submitButtonTapped(_ sender: Any) {
-
+        
     }
 
 
