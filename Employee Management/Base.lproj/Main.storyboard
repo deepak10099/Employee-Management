@@ -411,31 +411,28 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.55000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFs-Gn-aYS">
-                                                    <rect key="frame" x="131" y="18" width="180" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="Wyg-BL-rB8"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axc-EN-aDu">
-                                                    <rect key="frame" x="319" y="17.5" width="45" height="45"/>
+                                                    <rect key="frame" x="319" y="17" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="K2q-cN-323"/>
                                                         <constraint firstAttribute="width" constant="45" id="bdL-0o-w4Q"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="rightArrow.png"/>
-                                                    <connections>
-                                                        <action selector="rightArrowButtonTapped:" destination="eEW-gW-Uvw" eventType="touchUpInside" id="Gvc-hN-KcF"/>
-                                                    </connections>
                                                 </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFs-Gn-aYS">
+                                                    <rect key="frame" x="131" y="18" width="244" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="Wyg-BL-rB8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GFs-Gn-aYS" firstAttribute="leading" secondItem="hqP-Xs-h7t" secondAttribute="trailing" constant="8" id="781-iJ-UBL"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="axc-EN-aDu" secondAttribute="trailing" constant="3" id="ADM-bR-72o"/>
-                                                <constraint firstItem="axc-EN-aDu" firstAttribute="leading" secondItem="GFs-Gn-aYS" secondAttribute="trailing" constant="8" id="Dsu-l4-OYP"/>
+                                                <constraint firstAttribute="trailing" secondItem="GFs-Gn-aYS" secondAttribute="trailing" id="FT0-Q9-ADv"/>
                                                 <constraint firstItem="hqP-Xs-h7t" firstAttribute="leading" secondItem="b3c-Gs-XiY" secondAttribute="leadingMargin" constant="6" id="R8d-oY-nAr"/>
                                                 <constraint firstItem="GFs-Gn-aYS" firstAttribute="centerY" secondItem="b3c-Gs-XiY" secondAttribute="centerY" id="jyR-dJ-VyJ"/>
                                                 <constraint firstItem="axc-EN-aDu" firstAttribute="centerY" secondItem="b3c-Gs-XiY" secondAttribute="centerY" id="pgA-0k-PY7"/>
@@ -445,7 +442,7 @@
                                         <connections>
                                             <outlet property="detailsLabel" destination="hqP-Xs-h7t" id="5We-eF-L9O"/>
                                             <outlet property="detailsTextView" destination="GFs-Gn-aYS" id="ixG-bB-zFN"/>
-                                            <outlet property="rightArrowButton" destination="axc-EN-aDu" id="U1L-Nq-I8B"/>
+                                            <outlet property="rightArrowButton" destination="axc-EN-aDu" id="IiO-r8-dwC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -453,10 +450,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZfK-2H-kV7" firstAttribute="top" secondItem="PDX-0R-DJd" secondAttribute="bottom" id="C79-fO-foU"/>
                             <constraint firstAttribute="trailing" secondItem="ZfK-2H-kV7" secondAttribute="trailing" id="KpR-NL-HTs"/>
                             <constraint firstItem="ZfK-2H-kV7" firstAttribute="leading" secondItem="sfQ-IO-7lJ" secondAttribute="leading" id="TEC-2p-Qtc"/>
-                            <constraint firstItem="Owd-RJ-V3k" firstAttribute="top" secondItem="ZfK-2H-kV7" secondAttribute="bottom" id="UdU-fI-3bJ"/>
+                            <constraint firstItem="Owd-RJ-V3k" firstAttribute="top" secondItem="ZfK-2H-kV7" secondAttribute="bottom" id="iuh-ag-cmI"/>
+                            <constraint firstItem="ZfK-2H-kV7" firstAttribute="top" secondItem="PDX-0R-DJd" secondAttribute="bottom" id="vdB-Rl-MMr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Employee Details" id="alJ-km-tqc">

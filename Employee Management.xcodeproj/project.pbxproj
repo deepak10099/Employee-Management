@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00192B1E1E4532F30016A3A7 /* MultipleSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00192B1D1E4532F30016A3A7 /* MultipleSelectionViewController.xib */; };
+		00192B201E45332B0016A3A7 /* MultipleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */; };
+		00192B231E45376C0016A3A7 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 00192B211E45376C0016A3A7 /* checked.png */; };
+		00192B241E45376C0016A3A7 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 00192B221E45376C0016A3A7 /* unchecked.png */; };
 		004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F41E43308E00D503D7 /* AppDelegate.swift */; };
 		004CE4F71E43308E00D503D7 /* DisplayAllEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */; };
 		004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4F81E43308E00D503D7 /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00192B1D1E4532F30016A3A7 /* MultipleSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleSelectionViewController.xib; sourceTree = "<group>"; };
+		00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSelectionViewController.swift; sourceTree = "<group>"; };
+		00192B211E45376C0016A3A7 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		00192B221E45376C0016A3A7 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		004CE4F11E43308E00D503D7 /* Employee Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004CE4F41E43308E00D503D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAllEmployeesViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +127,12 @@
 				0055895F1E43CE7700CE829E /* rightArrow.png */,
 				0055895D1E43CDB600CE829E /* leftArrow.png */,
 				005589631E43DB2300CE829E /* profileImage.jpg */,
+				00192B211E45376C0016A3A7 /* checked.png */,
+				00192B221E45376C0016A3A7 /* unchecked.png */,
 				004CE5001E43308E00D503D7 /* Info.plist */,
 				005589571E43C53200CE829E /* EmployeeManager.swift */,
+				00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */,
+				00192B1D1E4532F30016A3A7 /* MultipleSelectionViewController.xib */,
 			);
 			path = "Employee Management";
 			sourceTree = "<group>";
@@ -254,7 +266,10 @@
 				004CE4FF1E43308E00D503D7 /* LaunchScreen.storyboard in Resources */,
 				005589641E43DB2300CE829E /* profileImage.jpg in Resources */,
 				0055895E1E43CDB600CE829E /* leftArrow.png in Resources */,
+				00192B241E45376C0016A3A7 /* unchecked.png in Resources */,
+				00192B1E1E4532F30016A3A7 /* MultipleSelectionViewController.xib in Resources */,
 				004CE4FC1E43308E00D503D7 /* Assets.xcassets in Resources */,
+				00192B231E45376C0016A3A7 /* checked.png in Resources */,
 				005589601E43CE7700CE829E /* rightArrow.png in Resources */,
 				004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */,
 			);
@@ -283,6 +298,7 @@
 			files = (
 				005589581E43C53200CE829E /* EmployeeManager.swift in Sources */,
 				004CE4F71E43308E00D503D7 /* DisplayAllEmployeesViewController.swift in Sources */,
+				00192B201E45332B0016A3A7 /* MultipleSelectionViewController.swift in Sources */,
 				005589621E43D0CC00CE829E /* AddEmployeeViewController.swift in Sources */,
 				004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */,
 			);
