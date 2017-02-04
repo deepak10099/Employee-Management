@@ -116,12 +116,13 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
 
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.dismiss(animated: true, completion: nil)
-        var cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddEmployeeCell
-        cell.profilePicImageView.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddEmployeeCell
+        cell.profilePicImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     func datePickerValueChanged(sender:UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "dd/mm/yyyy"
+//        dateFormatter.dateStyle = .medium
 
         let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! AddEmployeeCell
         cell.detailsTextView.text = dateFormatter.string(from: sender.date)
@@ -143,16 +144,20 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     func save(){
         let moc = DataController().managedObjectContext
         for index in 0..<(addEmployeeTableView.numberOfRows(inSection: 0)) {
-            let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddEmployeeCell
+            let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: index, section: 0)) as! AddEmployeeCell
             switch index {
             case 0:
                 let imageData = UIImagePNGRepresentation(cell.profilePicImageView.image!)
-                saveToCoreDataWith(key: "picture", and: imageData, with: moc)
-                saveToCoreDataWith(key: "name", and: cell.nameLabel, with: moc)
+                saveToCoreDataWith(key: "profilePic", and: imageData, with: moc)
+                saveToCoreDataWith(key: "name", and: cell.nameLabel.text, with: moc)
             case 1:
                 saveToCoreDataWith(key: "designation", and: cell.detailsTextView.text, with: moc)
             case 2:
-                saveToCoreDataWith(key: "dob", and: cell.detailsTextView.text, with: moc)
+                let dobString:String = cell.detailsTextView.text
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/mm/yy"
+                let dob:Date = dateFormatter.date(from: dobString)!
+                saveToCoreDataWith(key: "dob", and: dob, with: moc)
             case 3:
                 saveToCoreDataWith(key: "address", and: cell.detailsTextView.text, with: moc)
             case 4:
