@@ -32,31 +32,27 @@ public class MultipleSelectionViewController: UIViewController,UITableViewDelega
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = multipleSelectionTableView.dequeueReusableCell(withIdentifier: "multipleSelectionCell")!
         cell.selectionStyle = .none
-        cell.textLabel?.text = "deepak"
-        cell.imageView?.image = UIImage(named: "unchecked.png")
-        cell.imageView?.frame = CGRect(x: 10.0, y: 10.0, width: (cell.imageView?.frame.width)! - 20.0, height: (cell.imageView?.frame.height)! - 20.0)
 
-        cell.contentView.backgroundColor = UIColor.clear
-        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 0.0, y: 10.0, width: view.frame.size.width, height: 70.0))
+        let checkBoxImageView = UIImageView(frame: CGRect(x: 20.0, y: 5.0, width: cell.bounds.height - 10.0 , height: cell.bounds.height - 10.0))
+        checkBoxImageView.image = UIImage(named: "unchecked.png")
+        cell.addSubview(checkBoxImageView)
 
-        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])
-        whiteRoundedView.layer.masksToBounds = false
-        whiteRoundedView.layer.cornerRadius = 3.0
-        whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
-        whiteRoundedView.layer.shadowOpacity = 0.5
-        cell.contentView.addSubview(whiteRoundedView)
-        cell.contentView.sendSubview(toBack: whiteRoundedView)
+
+        let hobbyTextLabel = UILabel(frame: CGRect(x: cell.bounds.height + 50, y: 5.0, width: 400.0, height: cell.bounds.height - 10.0))
+        hobbyTextLabel.font = hobbyTextLabel.font.withSize(30.0)
+            hobbyTextLabel.text = "deepak"
+            cell.addSubview(hobbyTextLabel)
         return cell
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell:UITableViewCell = multipleSelectionTableView.cellForRow(at: indexPath)!
-        cell.imageView?.image = UIImage(named: "checked.png")
+        (cell.subviews[1] as! UIImageView).image = UIImage(named: "checked.png")
 
     }
 
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell:UITableViewCell = multipleSelectionTableView.cellForRow(at: indexPath)!
-        cell.imageView?.image = UIImage(named: "unchecked.png")
+        (cell.subviews[1] as! UIImageView).image = UIImage(named: "unchecked.png")
     }
 }
