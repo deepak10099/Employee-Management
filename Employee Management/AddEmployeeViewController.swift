@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
+
 
 public
-class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource {
+class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     var selectedHobbies:String = ""{
         didSet{
@@ -81,13 +83,8 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
 
     //MARK: UITableViewControllerDelegate Methods
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: indexPath) as! AddEmployeeCell
-
-        if  indexPath.row == 4{
-
-        }
         if indexPath.row == 5{
-            var multipleSelectionViewController:UIViewController = MultipleSelectionViewController(nibName: "MultipleSelectionViewController", bundle: nil, delegate: self)
+            let multipleSelectionViewController:UIViewController = MultipleSelectionViewController(nibName: "MultipleSelectionViewController", bundle: nil, delegate: self)
             navigationController?.pushViewController(multipleSelectionViewController, animated: true)
 //            self.present(multipleSelectionViewController, animated: true, completion: nil)
         }
@@ -116,6 +113,12 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     }
 
 
+
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.dismiss(animated: true, completion: nil)
+        var cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddEmployeeCell
+        cell.profilePicImageView.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+    }
     func datePickerValueChanged(sender:UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -124,11 +127,66 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         cell.detailsTextView.text = dateFormatter.string(from: sender.date)
     }
 
-    @IBAction func submitButtonTapped(_ sender: Any) {
-        
+    @IBAction func changePictureButtonTapped(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary
+        pickerController.allowsEditing = true
+
+        present(pickerController, animated: true, completion: nil)
     }
 
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        save()
+    }
 
+    func save(){
+        let moc = DataController().managedObjectContext
+        for index in 0..<(addEmployeeTableView.numberOfRows(inSection: 0)) {
+            let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddEmployeeCell
+            switch index {
+            case 0:
+                let imageData = UIImagePNGRepresentation(cell.profilePicImageView.image!)
+                saveToCoreDataWith(key: "picture", and: imageData, with: moc)
+                saveToCoreDataWith(key: "name", and: cell.nameLabel, with: moc)
+            case 1:
+                saveToCoreDataWith(key: "designation", and: cell.detailsTextView.text, with: moc)
+            case 2:
+                saveToCoreDataWith(key: "dob", and: cell.detailsTextView.text, with: moc)
+            case 3:
+                saveToCoreDataWith(key: "address", and: cell.detailsTextView.text, with: moc)
+            case 4:
+                saveToCoreDataWith(key: "gender", and: cell.detailsTextView.text, with: moc)
+            case 5:
+                saveToCoreDataWith(key: "hobbies", and: cell.detailsTextView.text, with: moc)
+            default: break
+            }
+        }
+        do{
+            try moc.save()
+        }
+        catch{
+            fatalError("Failure to save context: \(error)")
+        }
+    }
+
+    func saveToCoreDataWith(key:String, and value:Any, with MOC:NSManagedObjectContext){
+        let moc = DataController().managedObjectContext
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: moc) as! Employee
+        entity.setValue(value, forKey: key)
+}
+
+    func fetch(){
+        let moc = DataController().managedObjectContext
+        let employeeFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
+        do{
+            let fetchedEmployee:[Employee] = try moc.execute(employeeFetchRequest) as! [Employee]
+            print(fetchedEmployee[0].name)
+        }
+        catch{
+
+        }
+    }
 }
 
 class AddEmployeeCell: UITableViewCell {
@@ -147,6 +205,4 @@ class AddEmployeeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    
 }

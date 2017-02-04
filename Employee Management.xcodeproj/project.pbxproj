@@ -11,6 +11,11 @@
 		00192B201E45332B0016A3A7 /* MultipleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */; };
 		00192B231E45376C0016A3A7 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 00192B211E45376C0016A3A7 /* checked.png */; };
 		00192B241E45376C0016A3A7 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 00192B221E45376C0016A3A7 /* unchecked.png */; };
+		00192B291E45788C0016A3A7 /* Employee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00192B271E45788C0016A3A7 /* Employee.xcdatamodeld */; };
+		00192B3C1E458DC60016A3A7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00192B3B1E458DC60016A3A7 /* CoreData.framework */; };
+		00192B3E1E4590FB0016A3A7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00192B3D1E4590FB0016A3A7 /* DataController.swift */; };
+		00192B401E45B4480016A3A7 /* noProfile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00192B3F1E45B4480016A3A7 /* noProfile.jpg */; };
+		00192B431E45BF8D0016A3A7 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00192B411E45BF8D0016A3A7 /* Employee.swift */; };
 		004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F41E43308E00D503D7 /* AppDelegate.swift */; };
 		004CE4F71E43308E00D503D7 /* DisplayAllEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */; };
 		004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004CE4F81E43308E00D503D7 /* Main.storyboard */; };
@@ -48,6 +53,11 @@
 		00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSelectionViewController.swift; sourceTree = "<group>"; };
 		00192B211E45376C0016A3A7 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		00192B221E45376C0016A3A7 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		00192B281E45788C0016A3A7 /* Employee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Employee.xcdatamodel; sourceTree = "<group>"; };
+		00192B3B1E458DC60016A3A7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		00192B3D1E4590FB0016A3A7 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		00192B3F1E45B4480016A3A7 /* noProfile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noProfile.jpg; sourceTree = "<group>"; };
+		00192B411E45BF8D0016A3A7 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		004CE4F11E43308E00D503D7 /* Employee Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004CE4F41E43308E00D503D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAllEmployeesViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00192B3C1E458DC60016A3A7 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,13 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00192B3A1E458DC60016A3A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00192B3B1E458DC60016A3A7 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		004CE4E81E43308E00D503D7 = {
 			isa = PBXGroup;
 			children = (
+				00192B411E45BF8D0016A3A7 /* Employee.swift */,
 				004CE4F31E43308E00D503D7 /* Employee Management */,
 				004CE5081E43308E00D503D7 /* Employee ManagementTests */,
 				004CE5131E43308E00D503D7 /* Employee ManagementUITests */,
 				004CE4F21E43308E00D503D7 /* Products */,
+				00192B3A1E458DC60016A3A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,10 +150,13 @@
 				005589631E43DB2300CE829E /* profileImage.jpg */,
 				00192B211E45376C0016A3A7 /* checked.png */,
 				00192B221E45376C0016A3A7 /* unchecked.png */,
+				00192B3F1E45B4480016A3A7 /* noProfile.jpg */,
 				004CE5001E43308E00D503D7 /* Info.plist */,
+				00192B271E45788C0016A3A7 /* Employee.xcdatamodeld */,
 				005589571E43C53200CE829E /* EmployeeManager.swift */,
 				00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */,
 				00192B1D1E4532F30016A3A7 /* MultipleSelectionViewController.xib */,
+				00192B3D1E4590FB0016A3A7 /* DataController.swift */,
 			);
 			path = "Employee Management";
 			sourceTree = "<group>";
@@ -269,6 +293,7 @@
 				00192B241E45376C0016A3A7 /* unchecked.png in Resources */,
 				00192B1E1E4532F30016A3A7 /* MultipleSelectionViewController.xib in Resources */,
 				004CE4FC1E43308E00D503D7 /* Assets.xcassets in Resources */,
+				00192B401E45B4480016A3A7 /* noProfile.jpg in Resources */,
 				00192B231E45376C0016A3A7 /* checked.png in Resources */,
 				005589601E43CE7700CE829E /* rightArrow.png in Resources */,
 				004CE4FA1E43308E00D503D7 /* Main.storyboard in Resources */,
@@ -299,8 +324,11 @@
 				005589581E43C53200CE829E /* EmployeeManager.swift in Sources */,
 				004CE4F71E43308E00D503D7 /* DisplayAllEmployeesViewController.swift in Sources */,
 				00192B201E45332B0016A3A7 /* MultipleSelectionViewController.swift in Sources */,
+				00192B431E45BF8D0016A3A7 /* Employee.swift in Sources */,
 				005589621E43D0CC00CE829E /* AddEmployeeViewController.swift in Sources */,
 				004CE4F51E43308E00D503D7 /* AppDelegate.swift in Sources */,
+				00192B3E1E4590FB0016A3A7 /* DataController.swift in Sources */,
+				00192B291E45788C0016A3A7 /* Employee.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +594,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		00192B271E45788C0016A3A7 /* Employee.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				00192B281E45788C0016A3A7 /* Employee.xcdatamodel */,
+			);
+			currentVersion = 00192B281E45788C0016A3A7 /* Employee.xcdatamodel */;
+			path = Employee.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 004CE4E91E43308E00D503D7 /* Project object */;
 }

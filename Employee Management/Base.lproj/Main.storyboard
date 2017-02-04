@@ -374,6 +374,9 @@
                                                     <state key="normal" title="Change">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="changePictureButtonTapped:" destination="5Eo-cK-5Aw" eventType="touchUpInside" id="2nc-xa-FPv"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -472,12 +475,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitButtonTapped:" destination="5Eo-cK-5Aw" eventType="touchUpInside" id="XcN-YZ-nJu"/>
+                                    <action selector="submitButtonPressed:" destination="5Eo-cK-5Aw" eventType="touchUpInside" id="Hae-na-ZNA"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <action selector="submitButtonTapped:" destination="5Eo-cK-5Aw" id="6nS-h1-mNp"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
