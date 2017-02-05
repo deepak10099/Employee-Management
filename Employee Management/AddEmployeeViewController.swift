@@ -41,6 +41,12 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date
         datePickerView.addTarget(self, action: #selector(AddEmployeeViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+        if (employeeToDisplay != nil) {
+            viewDidLoadForUpdateRecordOrDisplayRecord()
+        }
+        else{
+            viewDidLoadForAddNewRecord()
+        }
     }
 
     func viewDidLoadForUpdateRecordOrDisplayRecord(){
@@ -51,7 +57,7 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     }
 
     func viewDidLoadForAddNewRecord() {
-        tableViewDataSource = []
+        tableViewDataSource = ["","","","",""]
     }
 
     override public func viewWillAppear(_ animated: Bool) {
@@ -75,9 +81,17 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         var cell:AddEmployeeCell!
         if  indexPath.row == 0{
             cell = addEmployeeTableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! AddEmployeeCell
+            cell.nameTextView.text = employeeToDisplay?.name
+            if (employeeToDisplay != nil) {
+                cell.profilePicImageView.image = UIImage(data: (employeeToDisplay?.profilePic)! as Data)
+            }
+            else{
+                cell.profilePicImageView.image = UIImage(named: "noProfile.jpg")
+            }
         }
         else{
             cell = addEmployeeTableView.dequeueReusableCell(withIdentifier: "otherCells", for: indexPath) as! AddEmployeeCell
+            cell.detailsTextView.text = tableViewDataSource?[indexPath.row - 1]
             if indexPath.row <= 3 {
                 cell.rightArrowButton.isHidden = true
             }
@@ -155,14 +169,27 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     }
 
     @IBAction func submitButtonPressed(_ sender: Any) {
-        save()
-        navigationController?.popViewController(animated: true)
+        if  submitButton.titleLabel?.text == "Submit"
+        {
+            save()
+            navigationController?.popViewController(animated: true)
+        }
+        else if submitButton.titleLabel?.text == "Edit"{
+            submitButton.setTitle("Save Changes", for: .normal)
+            addEmployeeTableView.reloadData()
+        }
+        else if submitButton.titleLabel?.text == "Save Changes"{
+
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 
+    func addNewEmployee() {
+        
+    }
 
     func save(){
         let moc = DatabaseController.getContext()
