@@ -72,8 +72,16 @@ class DisplayAllEmployeesViewController: UIViewController,NSFetchedResultsContro
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! AddEmployeeViewController).submitButton.setTitle("Submit", for: .normal)
+    }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let addEmployeeViewController:AddEmployeeViewController = storyBoard.instantiateViewController(withIdentifier: "addVC") as! AddEmployeeViewController
+        addEmployeeViewController.submitButton.setTitle("Edit", for: .normal)
+        addEmployeeViewController.employeeToDisplay = tableViewDataSource?[indexPath.row]
+        navigationController?.pushViewController(addEmployeeViewController, animated: true)
     }
 
 }

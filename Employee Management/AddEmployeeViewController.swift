@@ -22,11 +22,13 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     var genderTextView:UITextView!
     var pickerView:UIPickerView!
     var pickerViewData:Array<String>!
-
     var datePickerView:UIDatePicker!
+    var employeeToDisplay:Employee? = nil
+    var tableViewDataSource:[String]?
 
     var detailsLabel = ["Designation","DOB","Address","Gender","Hobbies"]
     @IBOutlet weak var addEmployeeTableView: UITableView!
+    @IBOutlet weak var submitButton: UIButton!
 
     override public func viewDidLoad() {
         addEmployeeTableView.delegate = self
@@ -39,6 +41,17 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date
         datePickerView.addTarget(self, action: #selector(AddEmployeeViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+
+    func viewDidLoadForUpdateRecordOrDisplayRecord(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dobString = dateFormatter.string(from: (employeeToDisplay?.dob)! as Date)
+        tableViewDataSource = [(employeeToDisplay?.designation)!, dobString, (employeeToDisplay?.address)!, (employeeToDisplay?.gender)!, (employeeToDisplay?.hobbies)!]
+    }
+
+    func viewDidLoadForAddNewRecord() {
+        tableViewDataSource = []
     }
 
     override public func viewWillAppear(_ animated: Bool) {
@@ -122,7 +135,6 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     func datePickerValueChanged(sender:UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-//        dateFormatter.dateStyle = .medium
 
         let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! AddEmployeeCell
         cell.detailsTextView.text = dateFormatter.string(from: sender.date)
@@ -141,11 +153,12 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         save()
         navigationController?.popViewController(animated: true)
     }
-
-    @IBAction func fetchButtonPressed(_ sender: Any) {
-        fetch()
-    }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+
+
     func save(){
         let moc = DatabaseController.getContext()
         let employee:Employee = Employee(context: moc)
@@ -179,20 +192,6 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
             }
         }
         DatabaseController.saveContext()
-    }
-
-    func fetch(){
-        let fetchRequest:NSFetchRequest<Employee> = Employee.fetchRequest()
-        do{
-            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
-            print("numberOfResults: \(searchResults.count)")
-            for result in searchResults as [Employee]{
-                print("Name: \(result.name)")
-            }
-        }
-        catch{
-            print("Error: \(error)")
-        }
     }
 }
 
