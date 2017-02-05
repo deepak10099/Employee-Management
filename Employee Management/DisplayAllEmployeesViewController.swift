@@ -92,6 +92,18 @@ class DisplayAllEmployeesViewController: UIViewController,NSFetchedResultsContro
         navigationController?.pushViewController(addEmployeeViewController, animated: true)
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            DatabaseController.getContext().delete(tableViewDataSource[indexPath.row])
+            tableViewDataSource.remove(at: indexPath.row)
+            DatabaseController.saveContext()
+            allEmployeeDetailsTableView.deleteRows(at: [indexPath], with: .fade)
+            updateMonitor()
+        default:
+            return
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         (segue.destination as! AddEmployeeViewController).submitButton.setTitle("Submit", for: .normal)
     }
