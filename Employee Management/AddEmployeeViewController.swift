@@ -141,55 +141,51 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         save()
     }
 
+    @IBAction func fetchButtonPressed(_ sender: Any) {
+        fetch()
+    }
+    
     func save(){
-        let moc = DataController().managedObjectContext
+        let moc = DatabaseController.getContext()
+        let employee:Employee = Employee(context: moc)
         for index in 0..<(addEmployeeTableView.numberOfRows(inSection: 0)) {
             let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: index, section: 0)) as! AddEmployeeCell
             switch index {
             case 0:
                 let imageData = UIImagePNGRepresentation(cell.profilePicImageView.image!)
-                saveToCoreDataWith(key: "profilePic", and: imageData, with: moc)
-                saveToCoreDataWith(key: "name", and: cell.nameLabel.text, with: moc)
+                employee.profilePic = imageData as NSData?
+                employee.name = cell.nameLabel.text
             case 1:
-                saveToCoreDataWith(key: "designation", and: cell.detailsTextView.text, with: moc)
+                employee.designation = cell.detailsTextView.text
             case 2:
                 let dobString:String = cell.detailsTextView.text
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/mm/yy"
                 let dob:Date = dateFormatter.date(from: dobString)!
-                saveToCoreDataWith(key: "dob", and: dob, with: moc)
+                employee.dob = dob as NSDate?
             case 3:
-                saveToCoreDataWith(key: "address", and: cell.detailsTextView.text, with: moc)
+                employee.address = cell.detailsTextView.text
             case 4:
-                saveToCoreDataWith(key: "gender", and: cell.detailsTextView.text, with: moc)
+                employee.gender = cell.detailsTextView.text
             case 5:
-                saveToCoreDataWith(key: "hobbies", and: cell.detailsTextView.text, with: moc)
+                employee.hobbies = cell.detailsTextView.text
             default: break
             }
         }
-        do{
-            try moc.save()
-        }
-        catch{
-            fatalError("Failure to save context: \(error)")
-        }
+        DatabaseController.saveContext()
     }
 
-    func saveToCoreDataWith(key:String, and value:Any, with MOC:NSManagedObjectContext){
-        let moc = DataController().managedObjectContext
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: moc) as! Employee
-        entity.setValue(value, forKey: key)
-}
-
     func fetch(){
-        let moc = DataController().managedObjectContext
-        let employeeFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
+        let fetchRequest:NSFetchRequest<Employee> = Employee.fetchRequest()
         do{
-            let fetchedEmployee:[Employee] = try moc.execute(employeeFetchRequest) as! [Employee]
-            print(fetchedEmployee[0].name)
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            print("numberOfResults: \(searchResults.count)")
+            for result in searchResults as [Employee]{
+                print("Name: \(result.name)")
+            }
         }
         catch{
-
+            print("Error: \(error)")
         }
     }
 }
