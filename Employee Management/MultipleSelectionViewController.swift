@@ -67,7 +67,7 @@ public class MultipleSelectionViewController: UIViewController,UITableViewDelega
 
     @IBAction func submitButtonTapped(_ sender: Any) {
         var selectedHobbies:Array<String> = []
-        let selectedIndexPaths:[IndexPath] = multipleSelectionTableView.indexPathsForSelectedRows!
+        let selectedIndexPaths:[IndexPath] = multipleSelectionTableView.indexPathsForSelectedRows ?? []
         for indexPath in selectedIndexPaths {
             selectedHobbies.append(allHobbies[indexPath.row])
         }

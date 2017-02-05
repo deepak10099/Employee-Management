@@ -88,9 +88,14 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
                 cell.detailsTextView.inputView = pickerView
             }
             cell.detailsLabel.text = detailsLabel[indexPath.row -  1]
-
         }
         cell.selectionStyle = .none
+        if submitButton.titleLabel?.text == "Edit" {
+            cell.isUserInteractionEnabled = false
+        }
+        else{
+            cell.isUserInteractionEnabled = true
+        }
         return cell
     }
 
