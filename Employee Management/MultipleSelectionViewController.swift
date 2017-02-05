@@ -18,7 +18,7 @@ public class MultipleSelectionViewController: UIViewController,UITableViewDelega
         addEmployeeDelegate = delegate
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -30,6 +30,7 @@ public class MultipleSelectionViewController: UIViewController,UITableViewDelega
         multipleSelectionTableView.dataSource = self
     }
 
+    //MARK: UITableViewControllerDataSource Methods
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -49,11 +50,12 @@ public class MultipleSelectionViewController: UIViewController,UITableViewDelega
 
         let hobbyTextLabel = UILabel(frame: CGRect(x: cell.bounds.height + 50, y: 5.0, width: 400.0, height: cell.bounds.height - 10.0))
         hobbyTextLabel.font = hobbyTextLabel.font.withSize(30.0)
-            hobbyTextLabel.text = allHobbies[indexPath.row]
-            cell.addSubview(hobbyTextLabel)
+        hobbyTextLabel.text = allHobbies[indexPath.row]
+        cell.addSubview(hobbyTextLabel)
         return cell
     }
 
+    //MARK: UITableViewControllerDelegate Methods
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell:UITableViewCell = multipleSelectionTableView.cellForRow(at: indexPath)!
         (cell.subviews[1] as! UIImageView).image = UIImage(named: "checked.png")

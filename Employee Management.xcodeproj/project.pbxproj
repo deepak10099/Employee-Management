@@ -23,7 +23,6 @@
 		004CE50A1E43308E00D503D7 /* Employee_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE5091E43308E00D503D7 /* Employee_ManagementTests.swift */; };
 		004CE5151E43308E00D503D7 /* Employee_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */; };
 		005589561E43B7A900CE829E /* dropDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 005589551E43B7A900CE829E /* dropDown.png */; };
-		005589581E43C53200CE829E /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005589571E43C53200CE829E /* EmployeeManager.swift */; };
 		0055895E1E43CDB600CE829E /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0055895D1E43CDB600CE829E /* leftArrow.png */; };
 		005589601E43CE7700CE829E /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0055895F1E43CE7700CE829E /* rightArrow.png */; };
 		005589621E43D0CC00CE829E /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005589611E43D0CC00CE829E /* AddEmployeeViewController.swift */; };
@@ -72,7 +71,6 @@
 		004CE5141E43308E00D503D7 /* Employee_ManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_ManagementUITests.swift; sourceTree = "<group>"; };
 		004CE5161E43308E00D503D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005589551E43B7A900CE829E /* dropDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropDown.png; sourceTree = "<group>"; };
-		005589571E43C53200CE829E /* EmployeeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
 		0055895D1E43CDB600CE829E /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
 		0055895F1E43CE7700CE829E /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		005589611E43D0CC00CE829E /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
@@ -139,26 +137,14 @@
 		004CE4F31E43308E00D503D7 /* Employee Management */ = {
 			isa = PBXGroup;
 			children = (
-				00942AAA1E46BC72002E88E6 /* Employee+CoreDataClass.swift */,
-				00942AAB1E46BC72002E88E6 /* Employee+CoreDataProperties.swift */,
 				004CE4F41E43308E00D503D7 /* AppDelegate.swift */,
-				005589611E43D0CC00CE829E /* AddEmployeeViewController.swift */,
-				004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */,
-				004CE4F81E43308E00D503D7 /* Main.storyboard */,
+				00942AAE1E470553002E88E6 /* Model */,
+				00942AB11E4705A5002E88E6 /* Views */,
+				00942AB01E470587002E88E6 /* ViewController */,
+				00942AAF1E470572002E88E6 /* Images */,
 				004CE4FB1E43308E00D503D7 /* Assets.xcassets */,
 				004CE4FD1E43308E00D503D7 /* LaunchScreen.storyboard */,
-				005589551E43B7A900CE829E /* dropDown.png */,
-				0055895F1E43CE7700CE829E /* rightArrow.png */,
-				0055895D1E43CDB600CE829E /* leftArrow.png */,
-				005589631E43DB2300CE829E /* profileImage.jpg */,
-				00192B211E45376C0016A3A7 /* checked.png */,
-				00192B221E45376C0016A3A7 /* unchecked.png */,
-				00192B3F1E45B4480016A3A7 /* noProfile.jpg */,
 				004CE5001E43308E00D503D7 /* Info.plist */,
-				00192B271E45788C0016A3A7 /* Employee.xcdatamodeld */,
-				005589571E43C53200CE829E /* EmployeeManager.swift */,
-				00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */,
-				00192B1D1E4532F30016A3A7 /* MultipleSelectionViewController.xib */,
 				00192B3D1E4590FB0016A3A7 /* DatabaseController.swift */,
 			);
 			path = "Employee Management";
@@ -180,6 +166,49 @@
 				004CE5161E43308E00D503D7 /* Info.plist */,
 			);
 			path = "Employee ManagementUITests";
+			sourceTree = "<group>";
+		};
+		00942AAE1E470553002E88E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00942AAA1E46BC72002E88E6 /* Employee+CoreDataClass.swift */,
+				00942AAB1E46BC72002E88E6 /* Employee+CoreDataProperties.swift */,
+				00192B271E45788C0016A3A7 /* Employee.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		00942AAF1E470572002E88E6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				005589551E43B7A900CE829E /* dropDown.png */,
+				0055895F1E43CE7700CE829E /* rightArrow.png */,
+				0055895D1E43CDB600CE829E /* leftArrow.png */,
+				005589631E43DB2300CE829E /* profileImage.jpg */,
+				00192B211E45376C0016A3A7 /* checked.png */,
+				00192B221E45376C0016A3A7 /* unchecked.png */,
+				00192B3F1E45B4480016A3A7 /* noProfile.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		00942AB01E470587002E88E6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				005589611E43D0CC00CE829E /* AddEmployeeViewController.swift */,
+				004CE4F61E43308E00D503D7 /* DisplayAllEmployeesViewController.swift */,
+				00192B1F1E45332B0016A3A7 /* MultipleSelectionViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		00942AB11E4705A5002E88E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				004CE4F81E43308E00D503D7 /* Main.storyboard */,
+				00192B1D1E4532F30016A3A7 /* MultipleSelectionViewController.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,7 +353,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005589581E43C53200CE829E /* EmployeeManager.swift in Sources */,
 				00942AAD1E46BC72002E88E6 /* Employee+CoreDataProperties.swift in Sources */,
 				004CE4F71E43308E00D503D7 /* DisplayAllEmployeesViewController.swift in Sources */,
 				00192B201E45332B0016A3A7 /* MultipleSelectionViewController.swift in Sources */,

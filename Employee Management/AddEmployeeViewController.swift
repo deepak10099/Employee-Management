@@ -67,14 +67,6 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         tableViewDataSource = ["","","","",""]
     }
 
-    override public func viewWillAppear(_ animated: Bool) {
-        
-    }
-
-    override public func viewDidAppear(_ animated: Bool) {
-
-    }
-
     //MARK: UITableViewControllerDataSource Methods
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -152,13 +144,12 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         view.endEditing(true)
     }
 
-
-
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.dismiss(animated: true, completion: nil)
         let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddEmployeeCell
         cell.profilePicImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
+
     func datePickerValueChanged(sender:UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -167,6 +158,7 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         cell.detailsTextView.text = dateFormatter.string(from: sender.date)
     }
 
+    //MARK: IBActions
     @IBAction func changePictureButtonTapped(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -195,10 +187,6 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-    }
-
-    func addNewEmployee() {
-
     }
 
     func save(employee:Employee){

@@ -59,11 +59,7 @@ class DisplayAllEmployeesViewController: UIViewController,NSFetchedResultsContro
         todaysReport.text = "\(todaysCount)"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    //MARK: UITableViewControllerDataSource Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -86,9 +82,7 @@ class DisplayAllEmployeesViewController: UIViewController,NSFetchedResultsContro
         return cell
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as! AddEmployeeViewController).submitButton.setTitle("Submit", for: .normal)
-    }
+    //MARK: UITableViewControllerDelegate Methods
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -98,6 +92,9 @@ class DisplayAllEmployeesViewController: UIViewController,NSFetchedResultsContro
         navigationController?.pushViewController(addEmployeeViewController, animated: true)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! AddEmployeeViewController).submitButton.setTitle("Submit", for: .normal)
+    }
 }
 
 class DisplayAllEmployeesCell: UITableViewCell {
@@ -109,7 +106,7 @@ class DisplayAllEmployeesCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
 }
 
