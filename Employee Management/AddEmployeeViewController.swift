@@ -13,6 +13,7 @@ import CoreData
 public
 class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    let moc = DatabaseController.getContext()
     var selectedHobbies:String = ""{
         didSet{
             let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 5, section: 0)) as! AddEmployeeCell
@@ -41,6 +42,12 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
         datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date
         datePickerView.addTarget(self, action: #selector(AddEmployeeViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+        if submitButton.titleLabel?.text == "Edit" {
+            addEmployeeTableView.isUserInteractionEnabled = false
+        }
+        else{
+            addEmployeeTableView.isUserInteractionEnabled = true
+        }
         if (employeeToDisplay != nil) {
             viewDidLoadForUpdateRecordOrDisplayRecord()
         }
@@ -88,6 +95,8 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
             else{
                 cell.profilePicImageView.image = UIImage(named: "noProfile.jpg")
             }
+            cell.profilePicImageView.layer.cornerRadius = cell.profilePicImageView.frame.width/2
+            cell.profilePicImageView.clipsToBounds = true
         }
         else{
             cell = addEmployeeTableView.dequeueReusableCell(withIdentifier: "otherCells", for: indexPath) as! AddEmployeeCell
@@ -101,15 +110,14 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
             if indexPath.row == 4{
                 cell.detailsTextView.inputView = pickerView
             }
+            if indexPath.row == 5{
+                cell.detailsTextView.isUserInteractionEnabled = false
+            }
             cell.detailsLabel.text = detailsLabel[indexPath.row -  1]
         }
         cell.selectionStyle = .none
-        if submitButton.titleLabel?.text == "Edit" {
-            cell.isUserInteractionEnabled = false
-        }
-        else{
-            cell.isUserInteractionEnabled = true
-        }
+
+
         return cell
     }
 
@@ -171,15 +179,17 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     @IBAction func submitButtonPressed(_ sender: Any) {
         if  submitButton.titleLabel?.text == "Submit"
         {
-            save()
+            let employee:Employee = Employee(context: moc)
+            save(employee: employee)
             navigationController?.popViewController(animated: true)
         }
         else if submitButton.titleLabel?.text == "Edit"{
             submitButton.setTitle("Save Changes", for: .normal)
-            addEmployeeTableView.reloadData()
+            addEmployeeTableView.isUserInteractionEnabled = true
         }
         else if submitButton.titleLabel?.text == "Save Changes"{
-
+            save(employee: employeeToDisplay!)
+            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -188,12 +198,10 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     }
 
     func addNewEmployee() {
-        
+
     }
 
-    func save(){
-        let moc = DatabaseController.getContext()
-        let employee:Employee = Employee(context: moc)
+    func save(employee:Employee){
         for index in 0..<((addEmployeeTableView.numberOfRows(inSection: 0)) + 1) {
             var cell:AddEmployeeCell?
             if index < addEmployeeTableView.numberOfRows(inSection: 0) {
