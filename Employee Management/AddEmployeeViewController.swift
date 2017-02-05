@@ -41,6 +41,17 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
 
         datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date
+
+        let calender = NSCalendar(calendarIdentifier: .gregorian)
+        let currentDate = NSDate()
+        let dateComponents = NSDateComponents()
+        dateComponents.year = -37
+        let minDate = calender?.date(byAdding: dateComponents as DateComponents, to: currentDate as Date, options: NSCalendar.Options(rawValue: 0))
+        dateComponents.year = -17
+        let maxDate = calender?.date(byAdding: dateComponents as DateComponents, to: currentDate as Date, options: NSCalendar.Options(rawValue: 0))
+        datePickerView.maximumDate = maxDate
+        datePickerView.minimumDate = minDate
+
         datePickerView.addTarget(self, action: #selector(AddEmployeeViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
         if submitButton.titleLabel?.text == "Edit" {
             addEmployeeTableView.isUserInteractionEnabled = false
