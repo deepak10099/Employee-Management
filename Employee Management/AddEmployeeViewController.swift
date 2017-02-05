@@ -121,7 +121,7 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     }
     func datePickerValueChanged(sender:UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/mm/yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
 //        dateFormatter.dateStyle = .medium
 
         let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! AddEmployeeCell
@@ -139,6 +139,7 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
 
     @IBAction func submitButtonPressed(_ sender: Any) {
         save()
+        navigationController?.popViewController(animated: true)
     }
 
     @IBAction func fetchButtonPressed(_ sender: Any) {
@@ -148,27 +149,32 @@ class AddEmployeeViewController: UIViewController,UITableViewDelegate, UITableVi
     func save(){
         let moc = DatabaseController.getContext()
         let employee:Employee = Employee(context: moc)
-        for index in 0..<(addEmployeeTableView.numberOfRows(inSection: 0)) {
-            let cell:AddEmployeeCell = addEmployeeTableView.cellForRow(at: IndexPath(row: index, section: 0)) as! AddEmployeeCell
+        for index in 0..<((addEmployeeTableView.numberOfRows(inSection: 0)) + 1) {
+            var cell:AddEmployeeCell?
+            if index < addEmployeeTableView.numberOfRows(inSection: 0) {
+                cell = addEmployeeTableView.cellForRow(at: IndexPath(row: index, section: 0)) as! AddEmployeeCell
+            }
             switch index {
             case 0:
-                let imageData = UIImagePNGRepresentation(cell.profilePicImageView.image!)
+                let imageData = UIImagePNGRepresentation((cell?.profilePicImageView.image!)!)
                 employee.profilePic = imageData as NSData?
-                employee.name = cell.nameLabel.text
+                employee.name = cell?.nameTextView.text
             case 1:
-                employee.designation = cell.detailsTextView.text
+                employee.designation = cell?.detailsTextView.text
             case 2:
-                let dobString:String = cell.detailsTextView.text
+                let dobString:String = cell!.detailsTextView.text
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/mm/yy"
-                let dob:Date = dateFormatter.date(from: dobString)!
+                let dob:Date = (dobString != "") ? (dateFormatter.date(from: dobString)!) : Date()
                 employee.dob = dob as NSDate?
             case 3:
-                employee.address = cell.detailsTextView.text
+                employee.address = cell?.detailsTextView.text
             case 4:
-                employee.gender = cell.detailsTextView.text
+                employee.gender = cell?.detailsTextView.text
             case 5:
-                employee.hobbies = cell.detailsTextView.text
+                employee.hobbies = cell?.detailsTextView.text
+            case 6:
+                employee.dateOfJoining = Date() as NSDate?
             default: break
             }
         }
@@ -196,7 +202,7 @@ class AddEmployeeCell: UITableViewCell {
     @IBOutlet weak var rightArrowButton: UIButton!
     
     @IBOutlet weak var profilePicImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameTextView: UITextView!
     @IBOutlet weak var changeProfilePicButton: UIButton!
 
     required init?(coder aDecoder: NSCoder) {

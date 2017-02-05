@@ -23,5 +23,6 @@ extension Employee {
     @NSManaged public var hobbies: String?
     @NSManaged public var name: String?
     @NSManaged public var profilePic: NSData?
+    @NSManaged public var dateOfJoining: NSDate?
 
 }
